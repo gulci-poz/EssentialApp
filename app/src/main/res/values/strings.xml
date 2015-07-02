@@ -11,5 +11,8 @@
     <string name="title_activity_form">FormActivity</string>
     <string name="form_main_title">Andropoz contact form</string>
     <string name="form_secondary_title">Enter your data</string>
-    <string name="form_first_name">First name:</string>
+    <string name="form_first_name">First name</string>
+    <string name="form_last_name">Last name</string>
+    <string name="form_email">Email</string>
+    <string name="button_register">Register</string>
 </resources>

@@ -14,13 +14,13 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="@string/form_main_title"
-        android:textSize="30sp"/>
+        android:textSize="25sp"/>
 
     <TextView
         android:id="@+id/formSecondaryTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/formMainTitle"
+        android:layout_below="@id/formMainTitle"
         android:gravity="center_horizontal"
         android:text="@string/form_secondary_title"/>
 
@@ -28,7 +28,66 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/form_first_name"
-        android:layout_below="@+id/formSecondaryTitle"
-        android:textSize="16dp"/>
+        android:id="@+id/formFirstName"
+        android:layout_below="@id/formSecondaryTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="16dp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/formEnterFirstName"
+        android:layout_alignBaseline="@id/formFirstName"
+        android:layout_toRightOf="@id/formFirstName"
+        android:layout_toEndOf="@id/formFirstName"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/form_last_name"
+        android:id="@+id/formLastName"
+        android:layout_below="@id/formFirstName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="16dp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/formEnterLastName"
+        android:layout_alignBaseline="@id/formLastName"
+        android:layout_toRightOf="@id/formFirstName"
+        android:layout_toEndOf="@id/formFirstName"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/formEmail"
+        android:text="@string/form_email"
+        android:layout_below="@id/formLastName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="16dp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/formEnterEmail"
+        android:inputType="textEmailAddress"
+        android:layout_alignBaseline="@id/formEmail"
+        android:layout_toRightOf="@id/formFirstName"
+        android:layout_toEndOf="@id/formFirstName"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_register"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>
