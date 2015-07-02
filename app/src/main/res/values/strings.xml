@@ -5,4 +5,11 @@
     <string name="action_settings">Settings</string>
     <string name="new_text">New Text</string>
     <string name="click_me">Click me</string>
+    <string name="title_activity_text_values">TextValues</string>
+    <string name="app_android">Aplikacje Android Lynda Essential Training</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non massa vulputate tellus sagittis luctus eu non leo. Nunc id tincidunt sem. Suspendisse volutpat arcu sed semper vestibulum. Integer tincidunt mauris at pellentesque egestas. Phasellus blandit dolor sapien, quis commodo felis pulvinar in. Etiam malesuada nisl ex, ut tempus tortor fringilla at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed varius, odio sit amet convallis tincidunt, diam urna dignissim magna, ut consequat ante risus ut neque. Nam a varius mi, ac sollicitudin sapien. Vestibulum sem leo, tincidunt at urna non, efficitur lacinia eros. Suspendisse potenti.</string>
+    <string name="title_activity_form">FormActivity</string>
+    <string name="form_main_title">Andropoz contact form</string>
+    <string name="form_secondary_title">Enter your data</string>
+    <string name="form_first_name">First name:</string>
 </resources>
