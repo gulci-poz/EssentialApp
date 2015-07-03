@@ -15,4 +15,6 @@
     <string name="form_last_name">Last name</string>
     <string name="form_email">Email</string>
     <string name="button_register">Register</string>
+    <string name="switch_image">Switch image</string>
+    <string name="load_asset">Load asset</string>
 </resources>
