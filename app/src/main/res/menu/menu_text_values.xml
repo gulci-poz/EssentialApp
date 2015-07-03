@@ -1,7 +1,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.gulci.android.essentialapp.TextValues">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.gulci.android.essentialapp.TextValues">
+    <item
+        android:id="@+id/action_switch_image"
+        android:orderInCategory="100"
+        android:title="@string/switch_image"
+        android:onClick="actionResourceClickHandler"/>
+    <item
+        android:id="@+id/action_load_asset"
+        android:orderInCategory="100"
+        android:title="@string/load_asset"
+        android:onClick="actionAssetClickHandler"/>
 </menu>

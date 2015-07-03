@@ -20,7 +20,7 @@ public class TextValues extends AppCompatActivity {
 
     private ArrayList<String> imagesToCycle = new ArrayList<>();
     private int imagesIndex = 0;
-    private ImageView iv = (ImageView) findViewById(R.id.raCourse);
+    private ImageView iv = null;
 
     private void imagesCycleUp() {
         imagesIndex = (imagesIndex + 1) % imagesToCycle.size();
@@ -64,22 +64,17 @@ public class TextValues extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_text_values, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        /*
+        if(item.getItemId() == R.id.action_switch_image) {
+            Log.d(LOG_TAG, "switch image option selected");
         }
+        */
 
         return super.onOptionsItemSelected(item);
     }
@@ -88,17 +83,41 @@ public class TextValues extends AppCompatActivity {
 
         int res = getResources().getIdentifier(imagesToCycle.get(imagesIndex), "drawable", getPackageName());
         imagesCycleUp();
+        iv = (ImageView) findViewById(R.id.raCourse);
         iv.setImageResource(res);
     }
 
     public void btnLoadAssetOnClickHandler(View view) {
 
-        String imageName = imagesToCycle.get(imagesIndex) + ".jpg";
+        String imageName = new String(imagesToCycle.get(imagesIndex) + ".png");
         imagesCycleUp();
 
         try {
             InputStream stream = getAssets().open(imageName);
             Drawable drawable = Drawable.createFromStream(stream, null);
+            iv = (ImageView) findViewById(R.id.raCourse);
+            iv.setImageDrawable(drawable);
+        }
+        catch(Exception e) {
+            Log.e(LOG_TAG, e.getMessage());
+        }
+    }
+
+    public void actionResourceClickHandler(MenuItem item) {
+        int res = getResources().getIdentifier(imagesToCycle.get(imagesIndex), "drawable", getPackageName());
+        imagesCycleUp();
+        iv = (ImageView) findViewById(R.id.raCourse);
+        iv.setImageResource(res);
+    }
+
+    public void actionAssetClickHandler(MenuItem item) {
+        String imageName = new String(imagesToCycle.get(imagesIndex) + ".png");
+        imagesCycleUp();
+
+        try {
+            InputStream stream = getAssets().open(imageName);
+            Drawable drawable = Drawable.createFromStream(stream, null);
+            iv = (ImageView) findViewById(R.id.raCourse);
             iv.setImageDrawable(drawable);
         }
         catch(Exception e) {
