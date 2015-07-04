@@ -1,4 +1,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="com.gulci.android.essentialapp.TextValues">
     <item
@@ -8,7 +9,12 @@
         android:onClick="actionResourceClickHandler"/>
     <item
         android:id="@+id/action_load_asset"
-        android:orderInCategory="100"
+        android:orderInCategory="101"
         android:title="@string/load_asset"
         android:onClick="actionAssetClickHandler"/>
+    <item
+        android:id="@+id/action_new_action"
+        android:orderInCategory="103"
+        android:title="@string/new_action"
+        app:showAsAction="ifRoom"/>
 </menu>
