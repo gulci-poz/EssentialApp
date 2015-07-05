@@ -19,18 +19,46 @@ public class TextValues extends AppCompatActivity {
 
     public static final String LOG_TAG = "TextValues Activity";
 
-    private ArrayList<String> imagesToCycle = new ArrayList<>();
-    private int imagesIndex = 0;
-    private ImageView iv = null;
+    private ArrayList<String> imagesToCycle;
+    private int imagesIndex;
+    private int res;
+    private String imageName;
+    private ImageView iv;
 
     private void imagesCycleUp() {
         imagesIndex = (imagesIndex + 1) % imagesToCycle.size();
+    }
+
+    private void switchImage() {
+        res = getResources().getIdentifier(imagesToCycle.get(imagesIndex), "drawable", getPackageName());
+        imagesCycleUp();
+        iv.setImageResource(res);
+    }
+
+    private void loadAsset() {
+        imageName = imagesToCycle.get(imagesIndex) + ".png";
+        imagesCycleUp();
+
+        try {
+            InputStream stream = getAssets().open(imageName);
+            Drawable drawable = Drawable.createFromStream(stream, null);
+            iv.setImageDrawable(drawable);
+        }
+        catch(Exception e) {
+            Log.e(LOG_TAG, e.getMessage());
+        }
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_values);
+
+        imagesToCycle = new ArrayList<>();
+        imagesIndex = 0;
+        res = 0;
+        imageName = new String();
+        iv = (ImageView) findViewById(R.id.raCourse);
 
         imagesToCycle.add("image_10101");
         imagesToCycle.add("image_10102");
@@ -61,6 +89,11 @@ public class TextValues extends AppCompatActivity {
         sb.append(getString(R.string.lorem_ipsum));
 
         tvLong.setText(sb.toString());
+
+        //zamiast wpisu w manifeście
+        //android:parentActivityName=".RouxActivity"
+        //+ obsługa kliknięcia w onOptionsItemSelected
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -82,58 +115,27 @@ public class TextValues extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        /*
-        if(item.getItemId() == R.id.action_switch_image) {
-            Log.d(LOG_TAG, "switch image option selected");
+
+        if(item.getItemId() == android.R.id.home) {
+            finish();
         }
-        */
 
         return super.onOptionsItemSelected(item);
     }
 
     public void btnSwitchImageOnClickHandler(View view) {
-
-        int res = getResources().getIdentifier(imagesToCycle.get(imagesIndex), "drawable", getPackageName());
-        imagesCycleUp();
-        iv = (ImageView) findViewById(R.id.raCourse);
-        iv.setImageResource(res);
+        switchImage();
     }
 
     public void btnLoadAssetOnClickHandler(View view) {
-
-        String imageName = new String(imagesToCycle.get(imagesIndex) + ".png");
-        imagesCycleUp();
-
-        try {
-            InputStream stream = getAssets().open(imageName);
-            Drawable drawable = Drawable.createFromStream(stream, null);
-            iv = (ImageView) findViewById(R.id.raCourse);
-            iv.setImageDrawable(drawable);
-        }
-        catch(Exception e) {
-            Log.e(LOG_TAG, e.getMessage());
-        }
+        loadAsset();
     }
 
     public void actionResourceClickHandler(MenuItem item) {
-        int res = getResources().getIdentifier(imagesToCycle.get(imagesIndex), "drawable", getPackageName());
-        imagesCycleUp();
-        iv = (ImageView) findViewById(R.id.raCourse);
-        iv.setImageResource(res);
+        switchImage();
     }
 
     public void actionAssetClickHandler(MenuItem item) {
-        String imageName = new String(imagesToCycle.get(imagesIndex) + ".png");
-        imagesCycleUp();
-
-        try {
-            InputStream stream = getAssets().open(imageName);
-            Drawable drawable = Drawable.createFromStream(stream, null);
-            iv = (ImageView) findViewById(R.id.raCourse);
-            iv.setImageDrawable(drawable);
-        }
-        catch(Exception e) {
-            Log.e(LOG_TAG, e.getMessage());
-        }
+        loadAsset();
     }
 }
