@@ -22,4 +22,5 @@
     <string name="goto_details">Details</string>
     <string name="goto_course">Course</string>
     <string name="title_activity_course">CourseActivity</string>
+    <string name="goto_website">Website</string>
 </resources>

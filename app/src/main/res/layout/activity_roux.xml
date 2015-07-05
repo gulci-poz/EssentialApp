@@ -27,4 +27,14 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:onClick="btnOnClickGotoCourseHandler"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/goto_website"
+        android:id="@+id/btnGotoWebsite"
+        android:layout_above="@+id/btnGotoCourse"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="btnOnClickGotoWebsiteHandler"/>
 </RelativeLayout>

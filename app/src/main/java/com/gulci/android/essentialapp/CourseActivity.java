@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class CourseActivity extends AppCompatActivity {
 
+    public static final String RESULT_MESSAGE = "resultMessage";
     protected String courseTitle;
 
     @Override
@@ -46,6 +47,8 @@ public class CourseActivity extends AppCompatActivity {
 
     public void btnGoBackOnClickHandler(View view) {
 
-        // 9.05, 2min., wysyłanie danych z powrotem do istniejącego Intent
+        getIntent().putExtra(RESULT_MESSAGE, "You're registered for " + courseTitle);
+        setResult(RESULT_OK, getIntent());
+        finish();
     }
 }
