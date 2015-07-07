@@ -8,6 +8,12 @@
                 android:paddingTop="@dimen/activity_vertical_margin"
                 tools:context="com.gulci.android.essentialapp.RouxActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lorem_ipsum"
+        android:background="@drawable/image_10101"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
