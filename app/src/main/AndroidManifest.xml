@@ -25,6 +25,19 @@
         <activity
             android:name=".RouxActivity"
             android:label="@string/title_activity_roux" >
+        </activity>
+        <activity
+            android:name=".CourseActivity"
+            android:label="@string/title_activity_course"
+            android:parentActivityName=".RouxActivity" >
+        </activity>
+        <activity
+            android:name=".StorageActivity"
+            android:label="@string/title_activity_storage" >
+        </activity>
+        <activity
+            android:name=".DataListActivity"
+            android:label="@string/title_activity_data_list" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,9 +45,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CourseActivity"
-            android:label="@string/title_activity_course"
-            android:parentActivityName=".RouxActivity">
+            android:name=".CourseDetailActivity"
+            android:label="@string/title_activity_course_detail" >
         </activity>
     </application>
 

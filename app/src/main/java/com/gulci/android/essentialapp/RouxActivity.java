@@ -54,7 +54,7 @@ public class RouxActivity extends AppCompatActivity {
 
         Intent courseIntent = new Intent(this, CourseActivity.class);
 
-        Course androidAppCourse = new Course();
+        Course androidAppCourse = new Course(10101, "Create Android App", "Creating cool Android Apps", 5);
         //żeby przekazać skomplikowany obiekt, trzeba mieć implementację Parcelable
         courseIntent.putExtra(COURSE_TITLE, androidAppCourse.getTitle());
 

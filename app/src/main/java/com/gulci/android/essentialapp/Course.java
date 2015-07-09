@@ -2,10 +2,17 @@ package com.gulci.android.essentialapp;
 
 public class Course {
 
-    private int courseNumber = 10101;
-    private String title = "Create Android App";
-    private String description = "Creating cool Android Apps";
-    private double credits = 5;
+    private int courseNumber;
+    private String title;
+    private String description;
+    private double credits;
+
+    public Course(int courseNumber, String title, String description, double credits) {
+        this.courseNumber = courseNumber;
+        this.title = title;
+        this.description = description;
+        this.credits = credits;
+    }
 
     public int getCourseNumber() {
         return courseNumber;
@@ -37,5 +44,11 @@ public class Course {
 
     public void setCredits(double credits) {
         this.credits = credits;
+    }
+
+    @Override
+    public String toString() {
+
+        return title;
     }
 }
